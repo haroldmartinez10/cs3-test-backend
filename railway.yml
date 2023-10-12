@@ -1,0 +1,28 @@
+# railway.yml
+
+# Define the Node.js version to use
+runtime:
+  name: node
+  version: 14
+
+# Define the server configuration
+servers:
+  default:
+    command: npm start
+    port: 3000
+    env:
+      NODE_ENV: production
+    routes:
+      # Allow POST requests to /api/todo
+      - path: /api/todo
+        method: POST
+      # Allow PUT requests to /api/todo/:id
+      - path: /api/todo/:id
+        method: PUT
+      # Allow DELETE requests to /api/todo/:id
+      - path: /api/todo/:id
+        method: DELETE
+      # Allow PATCH requests to /api/todo/:id
+      - path: /api/todo/:id
+        method: PATCH
+    generator: mongodb
