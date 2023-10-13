@@ -8,7 +8,7 @@ import todoRouter from './routes/todo.routes.js'
 
 const app = express()
 
-app.use(cors({ origin: "*" }));
+app.use(cors());
 app.use(express.json())
 app.use(morgan('dev'))
 
